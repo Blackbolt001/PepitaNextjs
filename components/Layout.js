@@ -1,23 +1,27 @@
-import { useSession, signIn, signOut } from "next-auth/react"
+import { useSession, useEffect, signIn, signOut } from "next-auth/react"
+import {useTheme} from 'next-themes'
+import Image from 'next/image';
 import Nav from '../components/Nav';
 
 export default function Layout({children}) {
   const { data: session } = useSession()
  if (!session) {
   return (
-    <div className="bg-blue-900 w-screen h-screen flex items-center">
-    <div className="text-center w-full">
-    <button onClick={() => signIn('google')} className="bg-white p-2 px-4 rounded-lg">Login with Google</button>
-    </div>
-    <div className="text-center w-full">
-    <button onClick={() => signIn('facebook')} className="bg-white p-2 px-4 rounded-lg">Login with Facebook</button>
-    </div>
-   </div>
-  );
 
+    <div className=" bg-bkg text-content isolate overflow-hidden p-4 sm:p-8 grid place-items-center">
+    <div className="grid relative bg-bkg min-h-screen place-items-center place-content-center gap-16 before:absolute before:h-1/2 before:w-3/4 before:rounded-tr-full before:rounded-bl-full before:blur-3xl before:bg-accent-2 before:animate-spin-slower before:-z-10 after:absolute after:h-2/3 after:w-2/3 after:rounded-tr-full after:rounded-bl-full after:blur-3xl after:bg-accent-1/80 after:animate-spin-slow after:-z-10">
+    <button onClick={() => signIn('google')} className="bg-blue-200 p-2 px-4 rounded-lg">Login with Google</button>
+    <button onClick={() => signIn('facebook')} className="bg-blue-200 p-2 px-4 rounded-lg">Login with Facebook</button>
+    <div className="text-6x1 font-bold">
+    <span className="underline decoration-accent-2">Dark</span> or {""}
+    <span className="underline decoration-accent-1">Light</span>?
+</div>
+</div>
+</div>
+  );
  }
   return (
-   <div className="bg-blue-900 min-h-screen flex">
+   <div className="bg-yellow-200 min-h-screen flex">
     <Nav/>
     <div className="bg-white flex-grow mt-2 mr-2 mb-2 rounded-lg p-4">
     <div>{children}</div>
