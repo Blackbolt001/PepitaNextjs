@@ -15,6 +15,7 @@ const [products,setProducts] = useState([]);
 
     return (
         <Layout>
+            <div className="bg-indigo-50">
             <Link className="btn-primary" href={'/products/new'}>Add new product</Link>
             <table className="basic mt-2">
                 <thead>
@@ -36,9 +37,11 @@ const [products,setProducts] = useState([]);
                                 </Link>
                             </td>
                         </tr>
+
                     ))}
                 </tbody>
             </table>
+            </div>
             </Layout>
     )
 }

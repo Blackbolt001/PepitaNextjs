@@ -4,7 +4,7 @@ import FacebookProvider from 'next-auth/providers/facebook';
 import { MongoDBAdapter } from '@auth/mongodb-adapter';
 import clientPromise from '@/lib/mongodb';
 
-const adminEmails = ['joseph.jgossett73@gmail.com', 'aubree.aubreegossett@gmail.com'];
+const adminEmails = ['aubree.aubreegossett@gmail.com'];
 
 export default NextAuth({
   providers: [
@@ -13,10 +13,10 @@ export default NextAuth({
       clientSecret: process.env.GOOGLE_SECRET,
     }),
     FacebookProvider({
-      clientId: process.env.FACEBOOK_CLIENT_ID,
-      clientSecret: process.env.FACEBOOK_CLIENT_SECRET
-    }),
-    
+      clientId: process.env.FACEBOOK_ID,
+      clientSecret: process.env.FACEBOOK_SECRET
+    })
+
   ],
   adapter: MongoDBAdapter(clientPromise)
   
