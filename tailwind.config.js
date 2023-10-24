@@ -8,6 +8,9 @@ module.exports =
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'sunflower': "url('/assets/sunflowers.jpg')"
+      },
       colors: { 
         accent:{
           1:"hsl(288 95.8% 90.6%)",

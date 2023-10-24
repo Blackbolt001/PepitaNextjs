@@ -6,10 +6,11 @@ export default function App({
   Component, pageProps: { session, ...pageProps }
 }) {
   return (
+    <ThemeProvider enableSystem={true} attribute='class'>
     <SessionProvider session={session}>
-      <ThemeProvider enableSystem={true} attribute='class'>
       <Component {...pageProps}/>
-      </ThemeProvider>
     </SessionProvider>
+    </ThemeProvider>
+
   )
 }
