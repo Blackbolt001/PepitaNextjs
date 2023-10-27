@@ -1,5 +1,4 @@
 import { useSession, useEffect, signIn, signOut } from "next-auth/react"
-import {useTheme} from 'next-themes'
 import Nav from '../components/Nav';
 
 export default function Layout({children}) {
@@ -21,11 +20,6 @@ export default function Layout({children}) {
     <Nav/>
     <div className=" bg-white flex-grow mt-2 mr-2 mb-2 rounded-lg p-4">
       <div>{children}</div>
-    <div class="bg-cover w-100 h-80 rounded-xl bg-no-repeat bg-center bg-[url('../assets/sunflowers.jpg')]"/>
-                    
-                    <div class="bg-cover opacity-50 w-100 h-80 rounded-xl bg-no-repeat bg-center bg-[url('../assets/sunflowers3.jpg')]"/>
-                  
-                    <div class="bg-cover  w-100 h-80 rounded-xl bg-no-repeat bg-center bg-[url('../assets/sunflowers2.jpg')]"/>
         </div>            
     </div>
    
